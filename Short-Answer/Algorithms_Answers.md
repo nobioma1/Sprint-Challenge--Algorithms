@@ -46,9 +46,9 @@ This snippet wll have a runtime of O(n) because it will run recursively dependin
     # Get middle of building
     # If egg breaks at middle
       # Set highest floor to middle and try again until it doesn't break
-    # Else if egg doesn't break at middle
-      # Set lowest floor to middle and try again until it does break
-    #
+    # else if egg doesn't break at middle
+      # set lowest to middle
+    # else return middle as f
 
   # Time Complexity O(log n)
 
