@@ -101,7 +101,7 @@ class SortingRobot:
 
         self.set_light_on()
 
-        while self.light_is_on() == True:
+        while self.light_is_on():
             self.set_light_off()
 
             # from the start of the list
