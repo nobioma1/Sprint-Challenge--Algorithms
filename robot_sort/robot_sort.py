@@ -99,9 +99,7 @@ class SortingRobot:
         Sort the robot's list.
         """
 
-        self.set_light_on()
-
-        while self.light_is_on():
+        while True:
             self.set_light_off()
 
             # from the start of the list
@@ -120,6 +118,9 @@ class SortingRobot:
                 self.swap_item()
                 self.move_right()
 
+            # Add condition to check if list is already sorted to prevent running the loop the next loop
+            if self.light_is_on() == False:
+                break
             # Have another pass on the list from the right
             # pick an item by swapping and move to the left
             # compare to the next item to the left and if item is lesser, swap item
@@ -133,7 +134,8 @@ class SortingRobot:
                 self.move_right()
                 self.swap_item()
                 self.move_left()
-
+            if self.light_is_on() == False:
+                break
         # return the sorted list
         return self._list
 
