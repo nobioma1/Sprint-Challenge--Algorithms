@@ -120,10 +120,19 @@ class SortingRobot:
                 self.swap_item()
                 self.move_right()
 
-            # Have another pass on the list from the left
+            # Have another pass on the list from the right
             # pick an item by swapping and move to the left
             # compare to the next item to the left and if item is lesser, swap item
             # move to the right and drop the item on the previous spot of the swapped item
+            while self.can_move_left():
+                self.swap_item()
+                self.move_left()
+                if self.compare_item() == -1:
+                    self.swap_item()
+                    self.set_light_on()
+                self.move_right()
+                self.swap_item()
+                self.move_left()
 
         # return the sorted list
         return self._list
